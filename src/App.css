@@ -1,38 +1,249 @@
-.App {
-  text-align: center;
+*{
+  font-family: "Poppins", sans-serif;
+  /* font-weight: 400; */
+  font-style: normal;
+  /* overflow-x: hidden; */
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* NAVBAR CSS */
+.navbar{
+  transition: background-color 0.2s ease;
+}
+.navbarBrand{
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+.navbarBrand > .book{
+  color: #01d28e;
+}
+.nav-link{
+  color: #fff;
+}
+.nav-link:hover{
+  color: #01d28e;
+}
+.scrolled{
+  background: #fff;
+}
+.scrolledColor{
+  color: #000;
+}
+.navbar-colored{
+  background: #fff;
+  border-bottom: 1px solid rgb(211, 211, 211);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* HOME CSS */
+.homeContainer{
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(images/bg_1.jpg);
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  color: #fff;
+  padding-top: 100px;
+}
+.homeContainer > h1{
+  font-weight: 800;
+  font-size: 3rem;
+}
+.homeContainer > p{
+  text-align: center;
+  width: 70%;
+  font-size: 1.2rem;
+}
+/* Form css */
+.formSelectBtn{
+  text-align: center;
+  padding: 30px 25px 25px;
+}
+.signupSelectBtn, .loginSelectBtn{
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+}
+.bottomBorder{
+  border-bottom: 2px solid #01d28e;
+}
+.formContainer{
+  padding: 2% 20% 15%;
 }
 
-.App-link {
-  color: #61dafb;
+/* CROUSEL CSS */
+.carouselContainer{
+  background-attachment: fixed;
+  padding: 40px 0 100px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.bookNowBtn{
+  background: #01d28e;
+  color: #fff;
+}
+.bookNowBtn:hover{
+  background: #01d28e;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* SEARCH ABOUT CSS */
+.searchAboutContainer > img{
+  width: 50%;
+  height: 100vh;
+  /* height: auto; */
+  z-index: 1;
+  margin-top: 100px;
+}
+.searchAboutContainer > div{
+  background: #01d28e;
+  color: #fff;
+  width: 50%;
+  height: 135vh;
+  position: absolute;
+  right: 0;
+  padding: 100px;
+}
+
+/* SERVICE CSS */
+.serviceContainer{
+  margin-top: 80px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.serviceCard{
+  width: 36rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border: none;
+}
+
+/* STATUS CSS */
+.statusContainer{
+  margin-top: 120px;
+}
+.statusImgContainer, .statusInfoContainer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.statusImgContainer{
+  align-items: center;
+}
+.statusImgContainer > img{
+  width: 50%;
+  padding: 10px;
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 5px;
+}
+.statusInfoContainer{
+  align-items: left;
+}
+
+/* MODAL CSS */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.display-block {
+  display: block;
+}
+.display-none {
+  display: none;
+}
+.modal-main {
+  position: fixed;
+  background-color: white;
+  width: 50%;
+  height: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 385px){
+  .homeContainer{
+    height: 120vh;
   }
-  to {
-    transform: rotate(360deg);
+  .homeContainer > h1{
+    margin: 0 10px;
   }
+  .formSelectBtn{
+    padding: 10px;
+    margin: 20px 0;
+  }
+  .signupSelectBtn, .loginSelectBtn{
+    font-size: 1rem;
+  }
+  .carouselContainer{
+    flex-direction: column;
+  }
+  .carouselContainer > div{
+    margin: 10px 0;
+  }
+  .card-body > h5{
+    overflow-y: hidden;
+  }
+  .searchAboutContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #01d28e;
+  }
+  .searchAboutContainer > img{
+    width: 90%;
+    height: auto;
+    position: relative;
+    left: -25px;
+    margin-top: 70px;
+  }
+  .searchAboutContainer > div{
+    position: static;
+    background: none;
+    height: auto;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+  }
+  /* Service */
+  .serviceCard{
+    width: 18rem;
+  }
+  .bookNowBtn{
+    width: 100%;
+  }
+  /* Status */
+  .statusInfoContainer{
+    text-align: center;
+    margin: 20px 0;
+  }
+}
+
+/* BOOK NOW CSS */
+.login {
+  min-height: 100vh;
+}
+.bg-image {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(1, 210, 142, 0.8)), url(images/bg_1.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.login-heading {
+  font-weight: 300;
+}
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
 }
